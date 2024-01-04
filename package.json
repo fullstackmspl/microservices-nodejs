@@ -4,7 +4,9 @@
   "description": "",
   "main": "start-services.js",
   "scripts": {
-    "start": "node start-services.js",
+    "start:backend": "node init && node start-services.js",
+    "start:frontend": "node init && npm start --prefix frontend-reactjs",
+    "start": "node init && concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
